@@ -35,8 +35,8 @@ data class User(val id : String,
         fun lastVisit(lastVisit:Date?) = this.also { this.lastVisit = lastVisit }
         fun isOnline(isOnline:Boolean) = this.also { this.isOnline = isOnline }
 
-        fun build() = if(id == null) null else User(
-            id!!,
+        fun build() = User(
+            id ?: newId.toString(),
             firstName,
             lastName,
             avatar,
