@@ -18,11 +18,11 @@ abstract class BaseMessage(val id: String,
                         date: Date,
                         payload:Any?,
                         type:String,
-                        isIncoming:Boolean = false):String{
+                        isIncoming:Boolean = false):BaseMessage{
             lastId++
             return when(type){
-                "image" -> ImageMessage(lastId.toString(), from, chat, isIncoming, date, payload as String).formatMessage()
-                else -> TextMessage(lastId.toString(), from, chat, isIncoming, date, payload as String).formatMessage()
+                "image" -> ImageMessage(lastId.toString(), from, chat, isIncoming, date, payload as String)
+                else -> TextMessage(lastId.toString(), from, chat, isIncoming, date, payload as String)
             }
         }
     }
