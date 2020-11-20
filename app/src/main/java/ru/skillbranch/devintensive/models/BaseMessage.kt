@@ -16,8 +16,8 @@ abstract class BaseMessage(val id: String,
         fun makeMessage(from: User?,
                         chat: Chat,
                         date: Date,
-                        payload:Any?,
                         type:String,
+                        payload:Any?,
                         isIncoming:Boolean = false):BaseMessage{
             lastId++
             return when(type){
