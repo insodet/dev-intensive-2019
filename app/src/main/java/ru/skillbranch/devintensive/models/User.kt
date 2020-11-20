@@ -32,7 +32,7 @@ data class User(val id : String,
         fun avatar(avatar:String?) = this.also { this.avatar = avatar }
         fun rating(rating:Int) = this.also { this.rating = rating }
         fun respect(respect:Int) = this.also { this.respect = respect }
-        fun lastVisit(lastVisit:Date?) = this.also { this.respect = respect }
+        fun lastVisit(lastVisit:Date?) = this.also { this.lastVisit = lastVisit }
         fun isOnline(isOnline:Boolean) = this.also { this.isOnline = isOnline }
 
         fun build() = User(
