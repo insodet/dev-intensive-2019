@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         benderImage = iv_bender
-        textTxt = text
+        textTxt = tv_text
         messageEt = et_message
-        sendBtn = send_btn
+        sendBtn = iv_send
 
         val status = savedInstanceState?.getString("STATUS") ?: Bender.Status.NORMAL.name
         val question = savedInstanceState?.getString("QUESTION") ?: Bender.Question.NAME.name

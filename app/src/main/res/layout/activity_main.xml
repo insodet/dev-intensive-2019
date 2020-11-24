@@ -9,7 +9,7 @@
     android:gravity="center">
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:height="100dp"
@@ -52,7 +52,7 @@
             android:layout_marginLeft="@dimen/spacing_normal_16"
             android:layout_marginRight="@dimen/spacing_normal_16"/>
         <ImageView
-            android:id="@+id/send_btn"
+            android:id="@+id/iv_send"
             android:layout_width="@dimen/send_image_size_24"
             android:layout_height="@dimen/send_image_size_24"
             android:src="@drawable/ic_send_black_24dp"
