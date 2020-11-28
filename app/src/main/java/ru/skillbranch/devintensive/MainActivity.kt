@@ -17,7 +17,7 @@ import ru.skillbranch.devintensive.extensions.hideKeyboard
 import ru.skillbranch.devintensive.extensions.isKeyboardClosed
 import ru.skillbranch.devintensive.models.Bender
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var benderImage: ImageView
     private lateinit var textTxt:TextView
@@ -43,13 +43,7 @@ class MainActivity : AppCompatActivity() {
         val (r,g,b) = benderObj.status.color
         benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.MULTIPLY)
 
-        sendBtn.setOnClickListener {
-            this.hideKeyboard()
-            val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString())
-            val (red,green,blue) = color
-            benderImage.setColorFilter(Color.rgb(red,green,blue), PorterDuff.Mode.MULTIPLY)
-            textTxt.text = phrase
-        }
+        sendBtn.setOnClickListener(this)
 
         messageEt.setOnEditorActionListener { view, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -89,5 +83,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    override fun onClick(v: View?) {
+        this.hideKeyboard()
+        val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString())
+        val (red,green,blue) = color
+        benderImage.setColorFilter(Color.rgb(red,green,blue), PorterDuff.Mode.MULTIPLY)
+        textTxt.text = phrase
     }
 }
