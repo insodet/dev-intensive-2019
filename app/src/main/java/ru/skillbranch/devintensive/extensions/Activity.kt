@@ -19,6 +19,7 @@ fun Activity.hideKeyboard() {
 
 fun Activity.isKeyboardOpen():Boolean {
     val point = Point()
+    this.windowManager.defaultDisplay.getSize(point)
     val rect = Rect()
     this.window.decorView.getWindowVisibleDisplayFrame(rect)
     return point.y - rect.bottom > 200
@@ -26,6 +27,7 @@ fun Activity.isKeyboardOpen():Boolean {
 
 fun Activity.isKeyboardClosed():Boolean {
     val point = Point()
+    this.windowManager.defaultDisplay.getSize(point)
     val rect = Rect()
     this.window.decorView.getWindowVisibleDisplayFrame(rect)
     return point.y == rect.bottom
