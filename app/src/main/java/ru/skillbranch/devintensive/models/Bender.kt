@@ -57,7 +57,7 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
         },
         MATERIAL(
             "Из чего я сделан?",
-            listOf("металл", "дерево", "iron", "wood"),
+            listOf("металл", "дерево", "metal", "iron", "wood"),
             "Материал не должен содержать цифр"
         ) {
             override fun nextQuestion(): Question = BDAY
